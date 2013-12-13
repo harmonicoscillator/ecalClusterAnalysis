@@ -67,7 +67,7 @@ int makeEcalNTuple(const char *inFile, sampleType sType, const char *outName, Fl
     {
       if(
 	(TMath::Abs(c->photon.eta[i]) > etaCut) ||
-	(c->isSpike(i)) ||
+	(c->isSpike(i)) //||
 	//(!(c->isLoosePhoton(i)))
 	)
 	continue;
@@ -97,6 +97,12 @@ int makeEcalNTuple(const char *inFile, sampleType sType, const char *outName, Fl
       }
 
       nClust_++;
+      if((unsigned)nClust_ > MAXCLUSTERS)
+      {
+	printf("ERROR: Number of clusters exceeds 500\n");
+	printf("Total: %i\n",c->photon.nPhotons);
+	exit(1);
+      }
     }
     run_ = c->evt.run;
     event_ = c->photon.event;

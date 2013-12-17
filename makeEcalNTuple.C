@@ -39,6 +39,7 @@ int makeEcalNTuple(const char *inFile, sampleType sType, const char *outName, Fl
   c->hasPhotonTree = true;
   c->hasSkimTree = true; // required for selectEvent()
   c->hasEvtTree = true;
+  c->hasHltTree = true;
 
   //loop over events in each file
   Long64_t nentries = c->GetEntries();
@@ -111,6 +112,23 @@ int makeEcalNTuple(const char *inFile, sampleType sType, const char *outName, Fl
     HFplusEta4_ = c->evt.hiHFplusEta4;
     HFminusEta4_ = c->evt.hiHFminusEta4;
     hiBin_ = c->evt.hiBin;
+
+    L1_SingleEG5_BptxAND = c->hlt.L1_SingleEG5_BptxAND;
+    L1_SingleEG5_BptxAND_Prescl = c->hlt.L1_SingleEG5_BptxAND_Prescl;
+    L1_SingleEG12 = c->hlt.L1_SingleEG12;
+    L1_SingleEG12_Prescl = c->hlt.L1_SingleEG12_Prescl;
+    HLT_PAPhoton10_NoCaloIdVL_v1 = c->hlt.HLT_PAPhoton10_NoCaloIdVL_v1;
+    HLT_PAPhoton10_NoCaloIdVL_v1_Prescl = c->hlt.HLT_PAPhoton10_NoCaloIdVL_v1_Prescl;
+    HLT_PAPhoton15_NoCaloIdVL_v1 = c->hlt.HLT_PAPhoton15_NoCaloIdVL_v1;
+    HLT_PAPhoton15_NoCaloIdVL_v1_Prescl = c->hlt.HLT_PAPhoton15_NoCaloIdVL_v1_Prescl;
+    HLT_PAPhoton20_NoCaloIdVL_v1 = c->hlt.HLT_PAPhoton20_NoCaloIdVL_v1;
+    HLT_PAPhoton20_NoCaloIdVL_v1_Prescl = c->hlt.HLT_PAPhoton20_NoCaloIdVL_v1_Prescl;
+    HLT_PAPhoton30_NoCaloIdVL_v1 = c->hlt.HLT_PAPhoton30_NoCaloIdVL_v1;
+    HLT_PAPhoton30_NoCaloIdVL_v1_Prescl = c->hlt.HLT_PAPhoton30_NoCaloIdVL_v1_Prescl;
+    HLT_PAPhoton40_NoCaloIdVL_v1 = c->hlt.HLT_PAPhoton40_NoCaloIdVL_v1;
+    HLT_PAPhoton40_NoCaloIdVL_v1_Prescl = c->hlt.HLT_PAPhoton40_NoCaloIdVL_v1_Prescl;
+    HLT_PAPhoton60_NoCaloIdVL_v1 = c->hlt.HLT_PAPhoton60_NoCaloIdVL_v1;
+    HLT_PAPhoton60_NoCaloIdVL_v1_Prescl = c->hlt.HLT_PAPhoton60_NoCaloIdVL_v1_Prescl;
 
     if(montecarlo)
     {

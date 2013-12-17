@@ -1,5 +1,5 @@
 #!/bin/bash
-g++ makeEcalNTuple.C $(root-config --cflags --libs) -Werror -Wall -g -o makeEcalNTuple.exe || exit 1
+g++ makeEcalNTuple.C $(root-config --cflags --libs) -Werror -Wall -O2 -o makeEcalNTuple.exe || exit 1
 
 # #MC, with weights
 # # old PbPb
@@ -65,7 +65,7 @@ for file in /mnt/hadoop/cms/store/user/luck/pA_photonSkimForest_v85_fromPromptRe
 do
     ./makeEcalNTuple.exe $file 4 pA_promptRECO/$(basename $file)
 done
-hadd -f "gammaJets_pA_Data.root" pA_promptRECO/*.root
+#hadd -f "gammaJets_pA_Data.root" pA_promptRECO/*.root
 echo "Done pA data"
 
 # # PbPb

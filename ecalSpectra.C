@@ -8,6 +8,7 @@
 #include "TCanvas.h"
 #include "TLegend.h"
 #include "TString.h"
+#include "TChain.h"
 #include "stdio.h"
 //#include "fitResult.h"
 
@@ -19,8 +20,8 @@ void ecalSpectra()
   const Int_t nPTBINS = 5;
 
   TChain *ecalTree = new TChain("ecalTree");
-  ecalTree->Add("pA_promptRECO/*.root");
-  
+  //ecalTree->Add("pA_promptRECO/*.root");
+  ecalTree->Add("pA_promptRECO/89.root");
   TH1D *ecalSpectra = new TH1D("ecalSpectra","ecalSpectra", nPTBINS, PTBINS);
 
   // const TCut ecalEtaCut = "abs(ecalTree.eta) < 1.44";

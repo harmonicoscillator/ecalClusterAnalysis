@@ -70,6 +70,25 @@ Float_t genGPt_[MAXCLUSTERS];
 Float_t genGEta_[MAXCLUSTERS];
 Float_t genGPhi_[MAXCLUSTERS];
 
+//HLT
+Int_t L1_SingleEG5_BptxAND;
+Int_t L1_SingleEG5_BptxAND_Prescl;
+Int_t L1_SingleEG12;
+Int_t L1_SingleEG12_Prescl;
+Int_t HLT_PAPhoton10_NoCaloIdVL_v1;
+Int_t HLT_PAPhoton10_NoCaloIdVL_v1_Prescl;
+Int_t HLT_PAPhoton15_NoCaloIdVL_v1;
+Int_t HLT_PAPhoton15_NoCaloIdVL_v1_Prescl;
+Int_t HLT_PAPhoton20_NoCaloIdVL_v1;
+Int_t HLT_PAPhoton20_NoCaloIdVL_v1_Prescl;
+Int_t HLT_PAPhoton30_NoCaloIdVL_v1;
+Int_t HLT_PAPhoton30_NoCaloIdVL_v1_Prescl;
+Int_t HLT_PAPhoton40_NoCaloIdVL_v1;
+Int_t HLT_PAPhoton40_NoCaloIdVL_v1_Prescl;
+Int_t HLT_PAPhoton60_NoCaloIdVL_v1;
+Int_t HLT_PAPhoton60_NoCaloIdVL_v1_Prescl;
+
+
 void setBranches_(bool montecarlo)
 {
   ecalTree_->Branch("run",&run_,"run/I");
@@ -105,6 +124,24 @@ void setBranches_(bool montecarlo)
     ecalTree_->Branch("genEta",genGEta_,"genEta[nClust]/F");
     ecalTree_->Branch("genPhi",genGPhi_,"genPhi[nClust]/F");
   }
+
+  ecalTree_->Branch("L1_SingleEG5_BptxAND",                &L1_SingleEG5_BptxAND,               "L1_SingleEG5_BptxAND/I");
+  ecalTree_->Branch("L1_SingleEG5_BptxAND_Prescl",	   &L1_SingleEG5_BptxAND_Prescl,	"L1_SingleEG5_BptxAND_Prescl/I");
+  ecalTree_->Branch("L1_SingleEG12",			   &L1_SingleEG12,			"L1_SingleEG12/I");
+  ecalTree_->Branch("L1_SingleEG12_Prescl",		   &L1_SingleEG12_Prescl,		"L1_SingleEG12_Prescl/I");
+  ecalTree_->Branch("HLT_PAPhoton10_NoCaloIdVL_v1",	   &HLT_PAPhoton10_NoCaloIdVL_v1,	"HLT_PAPhoton10_NoCaloIdVL_v1/I");
+  ecalTree_->Branch("HLT_PAPhoton10_NoCaloIdVL_v1_Prescl", &HLT_PAPhoton10_NoCaloIdVL_v1_Prescl,"HLT_PAPhoton10_NoCaloIdVL_v1_Prescl/I");
+  ecalTree_->Branch("HLT_PAPhoton15_NoCaloIdVL_v1",	   &HLT_PAPhoton15_NoCaloIdVL_v1,	"HLT_PAPhoton15_NoCaloIdVL_v1/I");
+  ecalTree_->Branch("HLT_PAPhoton15_NoCaloIdVL_v1_Prescl", &HLT_PAPhoton15_NoCaloIdVL_v1_Prescl,"HLT_PAPhoton15_NoCaloIdVL_v1_Prescl/I");
+  ecalTree_->Branch("HLT_PAPhoton20_NoCaloIdVL_v1",	   &HLT_PAPhoton20_NoCaloIdVL_v1,	"HLT_PAPhoton20_NoCaloIdVL_v1/I");
+  ecalTree_->Branch("HLT_PAPhoton20_NoCaloIdVL_v1_Prescl", &HLT_PAPhoton20_NoCaloIdVL_v1_Prescl,"HLT_PAPhoton20_NoCaloIdVL_v1_Prescl/I");
+  ecalTree_->Branch("HLT_PAPhoton30_NoCaloIdVL_v1",	   &HLT_PAPhoton30_NoCaloIdVL_v1,	"HLT_PAPhoton30_NoCaloIdVL_v1/I");
+  ecalTree_->Branch("HLT_PAPhoton30_NoCaloIdVL_v1_Prescl", &HLT_PAPhoton30_NoCaloIdVL_v1_Prescl,"HLT_PAPhoton30_NoCaloIdVL_v1_Prescl/I");
+  ecalTree_->Branch("HLT_PAPhoton40_NoCaloIdVL_v1",	   &HLT_PAPhoton40_NoCaloIdVL_v1,	"HLT_PAPhoton40_NoCaloIdVL_v1/I");
+  ecalTree_->Branch("HLT_PAPhoton40_NoCaloIdVL_v1_Prescl", &HLT_PAPhoton40_NoCaloIdVL_v1_Prescl,"HLT_PAPhoton40_NoCaloIdVL_v1_Prescl/I");
+  ecalTree_->Branch("HLT_PAPhoton60_NoCaloIdVL_v1",	   &HLT_PAPhoton60_NoCaloIdVL_v1,	"HLT_PAPhoton60_NoCaloIdVL_v1/I");
+  ecalTree_->Branch("HLT_PAPhoton60_NoCaloIdVL_v1_Prescl", &HLT_PAPhoton60_NoCaloIdVL_v1_Prescl,"HLT_PAPhoton60_NoCaloIdVL_v1_Prescl/I");
+
 }
 
 void getBranches_(bool montecarlo)
@@ -142,6 +179,24 @@ void getBranches_(bool montecarlo)
     ecalTree_->SetBranchAddress("genEta",genGEta_);
     ecalTree_->SetBranchAddress("genPhi",genGPhi_);
   }
+
+  ecalTree_->SetBranchAddress("L1_SingleEG5_BptxAND",                &L1_SingleEG5_BptxAND);
+  ecalTree_->SetBranchAddress("L1_SingleEG5_BptxAND_Prescl",	   &L1_SingleEG5_BptxAND_Prescl);
+  ecalTree_->SetBranchAddress("L1_SingleEG12",			   &L1_SingleEG12);
+  ecalTree_->SetBranchAddress("L1_SingleEG12_Prescl",		   &L1_SingleEG12_Prescl);
+  ecalTree_->SetBranchAddress("HLT_PAPhoton10_NoCaloIdVL_v1",	   &HLT_PAPhoton10_NoCaloIdVL_v1);
+  ecalTree_->SetBranchAddress("HLT_PAPhoton10_NoCaloIdVL_v1_Prescl", &HLT_PAPhoton10_NoCaloIdVL_v1_Prescl);
+  ecalTree_->SetBranchAddress("HLT_PAPhoton15_NoCaloIdVL_v1",	   &HLT_PAPhoton15_NoCaloIdVL_v1);
+  ecalTree_->SetBranchAddress("HLT_PAPhoton15_NoCaloIdVL_v1_Prescl", &HLT_PAPhoton15_NoCaloIdVL_v1_Prescl);
+  ecalTree_->SetBranchAddress("HLT_PAPhoton20_NoCaloIdVL_v1",	   &HLT_PAPhoton20_NoCaloIdVL_v1);
+  ecalTree_->SetBranchAddress("HLT_PAPhoton20_NoCaloIdVL_v1_Prescl", &HLT_PAPhoton20_NoCaloIdVL_v1_Prescl);
+  ecalTree_->SetBranchAddress("HLT_PAPhoton30_NoCaloIdVL_v1",	   &HLT_PAPhoton30_NoCaloIdVL_v1);
+  ecalTree_->SetBranchAddress("HLT_PAPhoton30_NoCaloIdVL_v1_Prescl", &HLT_PAPhoton30_NoCaloIdVL_v1_Prescl);
+  ecalTree_->SetBranchAddress("HLT_PAPhoton40_NoCaloIdVL_v1",	   &HLT_PAPhoton40_NoCaloIdVL_v1);
+  ecalTree_->SetBranchAddress("HLT_PAPhoton40_NoCaloIdVL_v1_Prescl", &HLT_PAPhoton40_NoCaloIdVL_v1_Prescl);
+  ecalTree_->SetBranchAddress("HLT_PAPhoton60_NoCaloIdVL_v1",	   &HLT_PAPhoton60_NoCaloIdVL_v1);
+  ecalTree_->SetBranchAddress("HLT_PAPhoton60_NoCaloIdVL_v1_Prescl", &HLT_PAPhoton60_NoCaloIdVL_v1_Prescl);
+
 }
 
 void readEcalSkim(TFile *filename, bool montecarlo = false)
